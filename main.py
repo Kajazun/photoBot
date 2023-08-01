@@ -24,14 +24,14 @@ def start(message):
 
 
 @bot.message_handler(content_types=['photo'])
-def qcel(message):
+def upload(message):
     sql.execute("INSERT INTO users (user_id, photo) VALUES (?, ?)", (message.chat.id, message.photo[0].file_id))
     db.commit()
     bot.send_message(message.chat.id,'The picture has been successfully saved with us.')
     
 
 @bot.message_handler(content_types=['text'])
-def tesnel(message):
+def watch(message):
    if message.text.lower() == 'watch':
     res = sql.execute(f"SELECT id, photo FROM users WHERE user_id = {message.chat.id}" )
     if res.fetchone() is None:
