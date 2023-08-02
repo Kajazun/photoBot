@@ -12,7 +12,7 @@ sql.execute('''CREATE TABLE IF NOT EXISTS users(
 db.commit()
 
 
-bot = telebot.TeleBot('5834768113:AAEG9EDL9oqkWzN2i41myi5KvJLxRrbA2HA')
+bot = telebot.TeleBot('')
 
 @bot.message_handler(commands=['start'])
 def start(message):
